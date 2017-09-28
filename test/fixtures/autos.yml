@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  marca_id: 1
+  puertas: 1
+  persona_id: 1
+  rueda_respuesto: false
+  patente: MyString
+
+two:
+  marca_id: 1
+  puertas: 1
+  persona_id: 1
+  rueda_respuesto: false
+  patente: MyString
