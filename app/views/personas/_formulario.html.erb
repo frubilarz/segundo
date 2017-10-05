@@ -1,0 +1,12 @@
+<%= form_for(@persona, :html => {:role => 'form'}) do |f| %>
+    <% if @persona.errors.any? %>
+        <%= pluralize(@persona.errors.count, "Errores") %>
+        <% @persona.errors.full_messages.each do |error| %>
+            <%= error %>
+        <% end %>
+    <% end %>
+    <%= f.label :nombres %>
+    <%= f.text_field :nombres %>
+
+    <%= f.submit %>
+<% end %>

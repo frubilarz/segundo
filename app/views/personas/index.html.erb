@@ -1,0 +1,7 @@
+<h1>Personas#index</h1>
+<p>Find me in app/views/personas/index.html.erb</p>
+
+<% @personas.each do |persona| %>
+    <%= persona.nombres %>
+    <%= link_to 'MOSTRAR', persona_url(persona) %><br>
+<% end %>
