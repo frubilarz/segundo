@@ -1,7 +1,13 @@
 <h1>Personas#index</h1>
 <p>Find me in app/views/personas/index.html.erb</p>
-
+<%= link_to 'crear una persona nueva', nueva_persona_path %><br>
 <% @personas.each do |persona| %>
     <%= persona.nombres %>
-    <%= link_to 'MOSTRAR', persona_url(persona) %><br>
+    <%= link_to 'MOSTRAR', persona_url(persona) %>
+    <%= link_to 'EDITAR', editar_persona_url(persona) %>
+    <%= link_to 'ELIMINAR', {:action => :eliminar,
+    :id => persona.id,
+    method: :delete,
+    data: {:confirm => 'estas seguro'}} %>
+    <br>
 <% end %>

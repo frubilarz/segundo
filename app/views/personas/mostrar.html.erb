@@ -1,3 +1,6 @@
 <h1>Personas#mostrar</h1>
 <p>Find me in app/views/personas/mostrar.html.erb</p>
-<%= @persona.nombres %>
+
+<%= @persona.nombres %><br>
+<%= link_to 'VOLVER INDEX PERSONAS', personas_path %>
+<%= link_to 'EDITAR', editar_persona_url(@persona) %>
