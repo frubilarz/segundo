@@ -9,9 +9,10 @@ class PersonasController < ApplicationController
   end
 
   def eliminar
+    @persona = Persona.find(params[:id])
     @persona.destroy
     respond_to do |format|
-      format.html{redirect_to @personas, notice: 'eliminado'}
+      format.html{redirect_to personas_path, notice: 'eliminado'}
     end
 
   end

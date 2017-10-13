@@ -8,10 +8,14 @@
     <%= f.label :nombres %>
     <%= f.text_field :nombres %>
 
+    <%= f.label :apellidos %>
+    <%= f.text_field :apellidos %>
+
+    <%= f.label :fecha_nacimiento %>
+    <%= f.text_field :fecha_nacimiento %>
+
+    <%= f.label :direccion %>
+    <%= f.text_field :direccion %>
+
     <%= f.submit %>
 <% end %>
-
-
-<!-- <%= f.label :marca %>
-     <%= f.select('marca_id', Marca.all.collect {|c| [c.nombre, c.id]}) %>
--->
