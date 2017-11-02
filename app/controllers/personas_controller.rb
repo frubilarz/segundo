@@ -1,18 +1,17 @@
 class PersonasController < ApplicationController
-  before_action :set_persona, only: [:mostrar, :editar, :update,:eliminar]
+  before_action :set_persona, only: [:mostrar, :editar, :update, :eliminar]
 
   def index
-    @personas = Persona.paginate(:page => params[:page], :per_page => 12)
+    @personas = Persona.paginate(:page => params[:page], :per_page => 15)
   end
 
   def mostrar
   end
 
   def eliminar
-    @persona = Persona.find(params[:id])
     @persona.destroy
     respond_to do |format|
-      format.html{redirect_to personas_path, notice: 'eliminado'}
+      format.html {redirect_to personas_path, notice: 'eliminado'}
     end
 
   end
@@ -51,6 +50,7 @@ class PersonasController < ApplicationController
     @persona = Persona.find(params[:id])
   end
 
+  #strong params
   def persona_params
     params.require(:persona).permit(:nombres, :apellidos, :fecha_nacimiento, :direccion)
   end

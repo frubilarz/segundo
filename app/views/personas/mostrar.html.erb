@@ -6,9 +6,24 @@
 <h2>Apellidos</h2>
 <%= @persona.apellidos %><br>
 <h2>Fecha de Nacimiento</h2>
-<%= @persona.fecha_nacimiento %><br>
+<%= @persona.fecha_nacimiento.strftime("%d- %m- %y") %><br>
 <h2>Direccion</h2>
 <%= @persona.direccion %><br>
+<h3>AUTOS
+</h3>
+<% i =1 %>
+
+<% @persona.autos.each do |auto| %>
+    <%= 'Auto numero'+i.to_s %>
+    <% if auto.marca.nombre!= 'Toyota' %>
+        no es toyuota
+    <% end %>
+    <%= auto.marca.nombre %>
+    <%= auto.puertas %>
+    <%= auto.patente %>
+    <br>
+    <% i+=1 %>
+<% end %>
 
 <%= link_to 'VOLVER INDEX PERSONAS', personas_path %>
 <%= link_to 'EDITAR', editar_persona_url(@persona) %>

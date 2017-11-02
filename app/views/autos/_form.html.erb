@@ -1,0 +1,18 @@
+<%= form_for(@auto, :html => {:role => 'form'}) do |f| %>
+    <% if @auto.errors.any? %>
+        <%= pluralize(@auto.errors.count, "Errores") %>
+        <% @auto.errors.full_messages.each do |error| %>
+            <%= error %>
+        <% end %>
+    <% end %>
+
+    <%= f.label :persona %><br>
+    <%= f.select('persona_id',
+                 Persona.where(nombres: 'pepe').collect { |c| [c.nombres+' '+c.apellidos.to_s, c.id] }) %>
+    <br>
+    <%= f.label :marca %><br>
+    <%= f.select('marca_id',
+                 Marca.all.collect { |c| [c.nombre, c.id] }) %>
+
+    <%= f.submit %>
+<% end %>

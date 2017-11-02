@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  get 'autos', to: 'autos#index', as: 'autos'
+  get 'autos/nuevo', to: 'autos#nuevo'
+  get 'autos/:id', to: 'autos#mostrar', as: 'auto'
+
   get 'personas/', to: 'personas#index', as: 'personas'
   get 'personas/nuevo', to: 'personas#nuevo', as: 'nueva_persona'
   post '/personas', to: 'personas#crear', as: 'crear_persona'

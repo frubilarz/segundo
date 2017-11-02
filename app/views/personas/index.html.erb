@@ -1,13 +1,18 @@
 <h1>Personas#index</h1>
 <p>Find me in app/views/personas/index.html.erb</p>
 <%= link_to 'crear una persona nueva', nueva_persona_path %><br>
-<% @personas.order(:nombres).each do |persona| %>
-    <%= persona.nombres %>
+<% @personas.order(:fecha_nacimiento).each do |persona| %>
+    <%= persona.nombres.to_s %>
+    <%= persona.apellidos.to_s %>
+    <% if persona.fecha_nacimiento!=nil %>
+        <%= persona.fecha_nacimiento.strftime("%d- %m- %y") %>
+    <% end %>
+    <%= persona.direccion %>
     <%= link_to 'MOSTRAR', persona_url(persona) %>
     <%= link_to 'EDITAR', editar_persona_url(persona) %>
     <%= link_to 'ELIMINAR', persona_path(persona),
-        method: :delete,
-        data: {confirm: '¿Estas seguro?'}%>
+                method: :delete,
+                data: {confirm: '¿Estas seguro?'} %>
     <br>
 <% end %>
 <%= will_paginate @personas %>
