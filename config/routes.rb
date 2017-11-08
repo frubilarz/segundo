@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  root 'personas#index'
+
+
   get 'autos', to: 'autos#index', as: 'autos'
   get 'autos/nuevo', to: 'autos#nuevo'
   get 'autos/:id', to: 'autos#mostrar', as: 'auto'

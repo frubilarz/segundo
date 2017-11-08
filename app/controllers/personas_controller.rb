@@ -2,7 +2,7 @@ class PersonasController < ApplicationController
   before_action :set_persona, only: [:mostrar, :editar, :update, :eliminar]
 
   def index
-    @personas = Persona.paginate(:page => params[:page], :per_page => 15)
+    @personas = Persona.paginate(:page => params[:page], :per_page => 5)
   end
 
   def mostrar

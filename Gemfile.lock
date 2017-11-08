@@ -40,6 +40,8 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
+    adminlte-generators (0.2.4)
+      railties (>= 3.1.0)
     arel (8.0.0)
     bindex (0.5.0)
     builder (3.2.3)
@@ -178,6 +180,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  adminlte-generators
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
@@ -198,4 +201,4 @@ DEPENDENCIES
   will_paginate-bootstrap
 
 BUNDLED WITH
-   1.15.4
+   1.16.0

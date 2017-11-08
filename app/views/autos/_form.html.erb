@@ -8,7 +8,7 @@
 
     <%= f.label :persona %><br>
     <%= f.select('persona_id',
-                 Persona.where(nombres: 'pepe').collect { |c| [c.nombres+' '+c.apellidos.to_s, c.id] }) %>
+                 Persona.all.collect { |c| [c.nombres+' '+c.apellidos.to_s, c.id] }) %>
     <br>
     <%= f.label :marca %><br>
     <%= f.select('marca_id',
